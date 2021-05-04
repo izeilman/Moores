@@ -51,7 +51,7 @@ df = df.applymap(lambda x: sanitize_num(x))
 df = df.set_index("year")
 
 # check to see if everything looks good
-# print(df.head)
+print(df.head)
 
 # store in csv
 df.to_csv("MooresData.csv")
@@ -67,10 +67,13 @@ plt.show()
 
 # Show the transistor scatter plot with the ngram results for distributed processing and multiprocessing
 # ngram data pulled into csv using tool from econpy https://github.com/econpy/google-ngrams pull #18
-ts = pd.read_csv('distributedprocessing_multiprocessing-eng_2012-1970-2019-3-caseSensitive.csv',index_col=0,parse_dates=True)
-fig, axes = plt.subplots(2, 1)
+df_p1 = pd.read_csv('distributedprocessing_multiprocessing-eng_2012-1970-2019-3-caseSensitive.csv',index_col=0,parse_dates=True)
+df_p2 = pd.read_csv('processorcores_clustercomputing-eng_2012-1970-2019-3-caseSensitive.csv',index_col=0,parse_dates=True)
+fig, axes = plt.subplots(3, 1)
 axes[0].scatter(df['transistor count'].index.tolist(), df['transistor count'].values.tolist(), s = 8)
 axes[0].set_title("Transistor count")
-axes[1].plot(ts)
+axes[1].plot(df_p1)
 axes[1].legend(["Distributed Processing", "Multiprocessing"])
+axes[2].plot(df_p2)
+axes[2].legend(["Processor Cores", "Cluster Computing"])
 plt.show()
