@@ -9,4 +9,4 @@ ngram data csv from google-ngrams developed by econpy https://github.com/econpy/
 
 Figures produced using this program
 ![alt text](https://github.com/izeilman/Moores/blob/master/Figure_1.png)
-![alt text](https://github.com/izeilman/Moores/blob/master/Figure_2.png)
+![alt text](https://github.com/izeilman/Moores/blob/master/Figure_2_new.png)
